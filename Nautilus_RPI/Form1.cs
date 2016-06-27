@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Nautilus_RPI
 {
-    public partial class Form1 : Form
+    public partial class Nautilus_RPI : Form
     {
-        public Form1()
+        public Nautilus_RPI()
         {
             InitializeComponent();
         }
