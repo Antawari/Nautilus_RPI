@@ -92,13 +92,14 @@ namespace Nautilus_RPI
         {
             System.Configuration.Configuration config = System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.None);
 
-            //Read the value
-            MessageBox.Show(config.AppSettings.Settings[key].Value);
+          
 
             //Write a new value
             config.AppSettings.Settings.Remove(key);
             config.AppSettings.Settings.Add(key, value);
 
+            //Read the value
+            MessageBox.Show(config.AppSettings.Settings[key].Value);
             //Save the configuration file.
             config.Save(System.Configuration.ConfigurationSaveMode.Modified);
             System.Configuration.ConfigurationManager.RefreshSection("appSettings");

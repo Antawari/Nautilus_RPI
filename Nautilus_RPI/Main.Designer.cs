@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabConfig = new System.Windows.Forms.TabControl();
             this.tabMonitor = new System.Windows.Forms.TabPage();
             this.grpMonitor = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             this.timerClock = new System.Windows.Forms.Timer(this.components);
             this.lblClock = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tabControl1.SuspendLayout();
+            this.tabConfig.SuspendLayout();
             this.tabMonitor.SuspendLayout();
             this.grpMonitor.SuspendLayout();
             this.TabConfiguracion.SuspendLayout();
@@ -73,17 +73,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabConfig
             // 
-            this.tabControl1.Controls.Add(this.tabMonitor);
-            this.tabControl1.Controls.Add(this.TabConfiguracion);
-            this.tabControl1.Controls.Add(this.TabAdministracion);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(984, 537);
-            this.tabControl1.TabIndex = 0;
+            this.tabConfig.Controls.Add(this.tabMonitor);
+            this.tabConfig.Controls.Add(this.TabConfiguracion);
+            this.tabConfig.Controls.Add(this.TabAdministracion);
+            this.tabConfig.Controls.Add(this.tabPage1);
+            this.tabConfig.Location = new System.Drawing.Point(12, 12);
+            this.tabConfig.Name = "tabConfig";
+            this.tabConfig.SelectedIndex = 0;
+            this.tabConfig.Size = new System.Drawing.Size(984, 537);
+            this.tabConfig.TabIndex = 0;
+            this.tabConfig.Click += new System.EventHandler(this.tabConfig_Click);
             // 
             // tabMonitor
             // 
@@ -281,6 +282,7 @@
             this.btnGuardarConfig.TabIndex = 23;
             this.btnGuardarConfig.Text = "Guardar";
             this.btnGuardarConfig.UseVisualStyleBackColor = true;
+            this.btnGuardarConfig.Click += new System.EventHandler(this.btnGuardarConfig_Click);
             // 
             // btnCancelarConfig
             // 
@@ -407,9 +409,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Nautilus_RPI.Properties.Resources.Logo;
-            this.pictureBox2.Location = new System.Drawing.Point(631, 93);
+            this.pictureBox2.Location = new System.Drawing.Point(508, 236);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(326, 406);
+            this.pictureBox2.Size = new System.Drawing.Size(449, 263);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
@@ -419,11 +421,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabConfig);
             this.Name = "Nautilus_RPI";
             this.Text = "Nautilus";
             this.Load += new System.EventHandler(this.Nautilus_RPI_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tabConfig.ResumeLayout(false);
             this.tabMonitor.ResumeLayout(false);
             this.grpMonitor.ResumeLayout(false);
             this.grpMonitor.PerformLayout();
@@ -439,7 +441,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabConfig;
         private System.Windows.Forms.TabPage tabMonitor;
         private System.Windows.Forms.TabPage TabConfiguracion;
         private System.Windows.Forms.TabPage TabAdministracion;

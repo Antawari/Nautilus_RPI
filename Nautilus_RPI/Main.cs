@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -130,6 +131,48 @@ namespace Nautilus_RPI
             {
                 MessageBox.Show("Base de datos NO Conectada");
             }
+        }
+
+        private void tabConfig_Click(object sender, EventArgs e)
+        {
+          
+            string server; //this will hold the server
+            string database; //Tjis will hold the database
+            string uid; //this will hold the user id
+            string password; //this will hold the password
+
+            server = ConfigurationManager.AppSettings["SERVER"];
+            database = ConfigurationManager.AppSettings["DATABASE"];
+            uid = ConfigurationManager.AppSettings["UID"];
+            password = ConfigurationManager.AppSettings["PASSWORD"];
+
+            txtServer.Text = server;
+            txtBase.Text = database;
+            txtUsuario.Text = uid;
+            txtPassword.Text = password;
+        }
+
+        private void btnGuardarConfig_Click(object sender, EventArgs e)
+        {
+            string key;
+            string value;
+
+            key = "SERVER";
+            value = txtServer.Text.Trim();
+            ConfigManager.writeConfig(key,value);
+
+            key = "UID";
+            value = txtUsuario.Text.Trim();
+            ConfigManager.writeConfig(key, value);
+
+            key = "PASSWORD";
+            value = txtPassword.Text.Trim();
+            ConfigManager.writeConfig(key, value);
+
+            key = "DATABASE";
+            value = txtBase.Text.Trim();
+            ConfigManager.writeConfig(key, value);
+
         }
     }
 }
