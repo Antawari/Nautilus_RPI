@@ -28,16 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabMonitor = new System.Windows.Forms.TabPage();
+            this.grpMonitor = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblDataWrite = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblGPS = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblInternet = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblDB = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TabConfiguracion = new System.Windows.Forms.TabPage();
             this.grpLogin = new System.Windows.Forms.GroupBox();
             this.btnLoginConf = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpConfig = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGuardarConfig = new System.Windows.Forms.Button();
             this.btnCancelarConfig = new System.Windows.Forms.Button();
-            this.btnUnlock = new System.Windows.Forms.Button();
             this.btnTestCon = new System.Windows.Forms.Button();
             this.txtBase = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,11 +59,18 @@
             this.txtServer = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.TabAdministracion = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.timerClock = new System.Windows.Forms.Timer(this.components);
+            this.lblClock = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
+            this.tabMonitor.SuspendLayout();
+            this.grpMonitor.SuspendLayout();
             this.TabConfiguracion.SuspendLayout();
             this.grpLogin.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.grpConfig.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -60,6 +78,7 @@
             this.tabControl1.Controls.Add(this.tabMonitor);
             this.tabControl1.Controls.Add(this.TabConfiguracion);
             this.tabControl1.Controls.Add(this.TabAdministracion);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -68,6 +87,7 @@
             // 
             // tabMonitor
             // 
+            this.tabMonitor.Controls.Add(this.grpMonitor);
             this.tabMonitor.Location = new System.Drawing.Point(4, 22);
             this.tabMonitor.Name = "tabMonitor";
             this.tabMonitor.Padding = new System.Windows.Forms.Padding(3);
@@ -76,10 +96,121 @@
             this.tabMonitor.Text = "Monitor";
             this.tabMonitor.UseVisualStyleBackColor = true;
             // 
+            // grpMonitor
+            // 
+            this.grpMonitor.Controls.Add(this.pictureBox2);
+            this.grpMonitor.Controls.Add(this.lblClock);
+            this.grpMonitor.Controls.Add(this.label12);
+            this.grpMonitor.Controls.Add(this.label13);
+            this.grpMonitor.Controls.Add(this.lblDataWrite);
+            this.grpMonitor.Controls.Add(this.label11);
+            this.grpMonitor.Controls.Add(this.lblGPS);
+            this.grpMonitor.Controls.Add(this.label9);
+            this.grpMonitor.Controls.Add(this.lblInternet);
+            this.grpMonitor.Controls.Add(this.label3);
+            this.grpMonitor.Controls.Add(this.lblDB);
+            this.grpMonitor.Controls.Add(this.label1);
+            this.grpMonitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpMonitor.Location = new System.Drawing.Point(7, 0);
+            this.grpMonitor.Name = "grpMonitor";
+            this.grpMonitor.Size = new System.Drawing.Size(963, 505);
+            this.grpMonitor.TabIndex = 0;
+            this.grpMonitor.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(336, 188);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 37);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "OK";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 188);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(279, 37);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Conectado a PLC:";
+            // 
+            // lblDataWrite
+            // 
+            this.lblDataWrite.AutoSize = true;
+            this.lblDataWrite.Location = new System.Drawing.Point(336, 151);
+            this.lblDataWrite.Name = "lblDataWrite";
+            this.lblDataWrite.Size = new System.Drawing.Size(63, 37);
+            this.lblDataWrite.TabIndex = 7;
+            this.lblDataWrite.Text = "OK";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 151);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(290, 37);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Escritura de Datos:";
+            // 
+            // lblGPS
+            // 
+            this.lblGPS.AutoSize = true;
+            this.lblGPS.Location = new System.Drawing.Point(336, 77);
+            this.lblGPS.Name = "lblGPS";
+            this.lblGPS.Size = new System.Drawing.Size(63, 37);
+            this.lblGPS.TabIndex = 5;
+            this.lblGPS.Text = "OK";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 37);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "GPS:";
+            // 
+            // lblInternet
+            // 
+            this.lblInternet.AutoSize = true;
+            this.lblInternet.Location = new System.Drawing.Point(336, 40);
+            this.lblInternet.Name = "lblInternet";
+            this.lblInternet.Size = new System.Drawing.Size(63, 37);
+            this.lblInternet.TabIndex = 3;
+            this.lblInternet.Text = "OK";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(324, 37);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Conectado a Internet:";
+            // 
+            // lblDB
+            // 
+            this.lblDB.AutoSize = true;
+            this.lblDB.Location = new System.Drawing.Point(336, 114);
+            this.lblDB.Name = "lblDB";
+            this.lblDB.Size = new System.Drawing.Size(63, 37);
+            this.lblDB.TabIndex = 1;
+            this.lblDB.Text = "OK";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(235, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Base de Datos:";
+            // 
             // TabConfiguracion
             // 
             this.TabConfiguracion.Controls.Add(this.grpLogin);
-            this.TabConfiguracion.Controls.Add(this.groupBox1);
+            this.TabConfiguracion.Controls.Add(this.grpConfig);
             this.TabConfiguracion.Location = new System.Drawing.Point(4, 22);
             this.TabConfiguracion.Name = "TabConfiguracion";
             this.TabConfiguracion.Padding = new System.Windows.Forms.Padding(3);
@@ -107,29 +238,30 @@
             this.btnLoginConf.TabIndex = 1;
             this.btnLoginConf.Text = "Login";
             this.btnLoginConf.UseVisualStyleBackColor = true;
+            this.btnLoginConf.Click += new System.EventHandler(this.btnLoginConf_Click);
             // 
-            // groupBox1
+            // grpConfig
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.btnGuardarConfig);
-            this.groupBox1.Controls.Add(this.btnCancelarConfig);
-            this.groupBox1.Controls.Add(this.btnUnlock);
-            this.groupBox1.Controls.Add(this.btnTestCon);
-            this.groupBox1.Controls.Add(this.txtBase);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtPassword);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtUsuario);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtServer);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 118);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(964, 390);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Configurar Base de Datos";
+            this.grpConfig.Controls.Add(this.pictureBox1);
+            this.grpConfig.Controls.Add(this.btnGuardarConfig);
+            this.grpConfig.Controls.Add(this.btnCancelarConfig);
+            this.grpConfig.Controls.Add(this.btnTestCon);
+            this.grpConfig.Controls.Add(this.txtBase);
+            this.grpConfig.Controls.Add(this.label5);
+            this.grpConfig.Controls.Add(this.txtPassword);
+            this.grpConfig.Controls.Add(this.label6);
+            this.grpConfig.Controls.Add(this.txtUsuario);
+            this.grpConfig.Controls.Add(this.label7);
+            this.grpConfig.Controls.Add(this.txtServer);
+            this.grpConfig.Controls.Add(this.label8);
+            this.grpConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpConfig.Location = new System.Drawing.Point(6, 118);
+            this.grpConfig.Name = "grpConfig";
+            this.grpConfig.Size = new System.Drawing.Size(964, 390);
+            this.grpConfig.TabIndex = 0;
+            this.grpConfig.TabStop = false;
+            this.grpConfig.Text = "Configurar Base de Datos";
+            this.grpConfig.Visible = false;
             // 
             // pictureBox1
             // 
@@ -159,15 +291,6 @@
             this.btnCancelarConfig.Text = "Cancelar";
             this.btnCancelarConfig.UseVisualStyleBackColor = true;
             // 
-            // btnUnlock
-            // 
-            this.btnUnlock.Location = new System.Drawing.Point(6, 306);
-            this.btnUnlock.Name = "btnUnlock";
-            this.btnUnlock.Size = new System.Drawing.Size(147, 78);
-            this.btnUnlock.TabIndex = 20;
-            this.btnUnlock.Text = "Unlock";
-            this.btnUnlock.UseVisualStyleBackColor = true;
-            // 
             // btnTestCon
             // 
             this.btnTestCon.Location = new System.Drawing.Point(148, 185);
@@ -176,6 +299,7 @@
             this.btnTestCon.TabIndex = 19;
             this.btnTestCon.Text = "Probar Conexion";
             this.btnTestCon.UseVisualStyleBackColor = true;
+            this.btnTestCon.Click += new System.EventHandler(this.btnTestCon_Click);
             // 
             // txtBase
             // 
@@ -255,6 +379,41 @@
             this.TabAdministracion.Text = "Administracion";
             this.TabAdministracion.UseVisualStyleBackColor = true;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(976, 511);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "PLC";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // timerClock
+            // 
+            this.timerClock.Enabled = true;
+            this.timerClock.Interval = 500;
+            this.timerClock.Tick += new System.EventHandler(this.timerClock_Tick);
+            // 
+            // lblClock
+            // 
+            this.lblClock.AutoSize = true;
+            this.lblClock.Location = new System.Drawing.Point(6, 465);
+            this.lblClock.Name = "lblClock";
+            this.lblClock.Size = new System.Drawing.Size(102, 37);
+            this.lblClock.TabIndex = 10;
+            this.lblClock.Text = "label2";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Nautilus_RPI.Properties.Resources.Logo;
+            this.pictureBox2.Location = new System.Drawing.Point(631, 93);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(326, 406);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
             // Nautilus_RPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,12 +422,17 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "Nautilus_RPI";
             this.Text = "Nautilus";
+            this.Load += new System.EventHandler(this.Nautilus_RPI_Load);
             this.tabControl1.ResumeLayout(false);
+            this.tabMonitor.ResumeLayout(false);
+            this.grpMonitor.ResumeLayout(false);
+            this.grpMonitor.PerformLayout();
             this.TabConfiguracion.ResumeLayout(false);
             this.grpLogin.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpConfig.ResumeLayout(false);
+            this.grpConfig.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,12 +443,11 @@
         private System.Windows.Forms.TabPage tabMonitor;
         private System.Windows.Forms.TabPage TabConfiguracion;
         private System.Windows.Forms.TabPage TabAdministracion;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpConfig;
         private System.Windows.Forms.GroupBox grpLogin;
         private System.Windows.Forms.Button btnLoginConf;
         private System.Windows.Forms.Button btnGuardarConfig;
         private System.Windows.Forms.Button btnCancelarConfig;
-        private System.Windows.Forms.Button btnUnlock;
         private System.Windows.Forms.Button btnTestCon;
         private System.Windows.Forms.TextBox txtBase;
         private System.Windows.Forms.Label label5;
@@ -295,6 +458,21 @@
         private System.Windows.Forms.TextBox txtServer;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox grpMonitor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDB;
+        private System.Windows.Forms.Label lblInternet;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblGPS;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblDataWrite;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Timer timerClock;
+        private System.Windows.Forms.Label lblClock;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

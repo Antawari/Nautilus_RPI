@@ -9,7 +9,7 @@ namespace Nautilus_RPI
     public class KeyboardManager
     {
         public static string textString;
-
+        static string _textField;
         public static string keyActivation()
         {
 
@@ -18,5 +18,18 @@ namespace Nautilus_RPI
 
             return textString;
         }
+
+        public static string textField
+        {
+            get
+            {
+                return _textField;
+            }
+            set
+            {
+                _textField = value;
+            }
+        }
+
     }
 }

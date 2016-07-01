@@ -75,6 +75,7 @@
             this.btn_q = new System.Windows.Forms.Button();
             this.txtContent = new System.Windows.Forms.TextBox();
             this.btn_back = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_www
@@ -577,7 +578,7 @@
             // txtContent
             // 
             this.txtContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContent.Location = new System.Drawing.Point(12, 12);
+            this.txtContent.Location = new System.Drawing.Point(12, 64);
             this.txtContent.Name = "txtContent";
             this.txtContent.Size = new System.Drawing.Size(984, 44);
             this.txtContent.TabIndex = 46;
@@ -594,11 +595,22 @@
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(100, 37);
+            this.lblTitle.TabIndex = 93;
+            this.lblTitle.Text = "label1";
+            // 
             // NautilusKey
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.btn_www);
             this.Controls.Add(this.btn_slash);
@@ -648,6 +660,7 @@
             this.Controls.Add(this.txtContent);
             this.Name = "NautilusKey";
             this.Text = "NautilusKey";
+            this.Load += new System.EventHandler(this.NautilusKey_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -702,5 +715,6 @@
         private System.Windows.Forms.Button btn_q;
         private System.Windows.Forms.TextBox txtContent;
         private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

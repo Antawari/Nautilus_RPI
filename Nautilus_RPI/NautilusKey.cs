@@ -333,5 +333,10 @@ namespace Nautilus_RPI
                 }
             }
         }
+
+        private void NautilusKey_Load(object sender, EventArgs e)
+        {
+            lblTitle.Text = KeyboardManager.textField;
+        }
     }
 }
